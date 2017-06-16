@@ -1,7 +1,18 @@
-gameBoard = [[" 1 "," 2 "," 3 "," 4 "],[" 5 "," 6 "," 7 "," 8 "],[" 9 "," 10"," 11"," 12"],[" 13"," 14"," 15"," 0 "]]
-gameBoard2 = [[" 1 "," 2 "," 3 "," 4 "],[" 5 "," 6 "," 7 "," 8 "],[" 13"," 14"," 15"," 0 "],[" 9 "," 10"," 11"," 12"]]
+import pygame
+from pygame.locals import *
+import sys
 
-if gameBoard == gameBoard2 :
-    print("same")
-else :
-    print("wrong")
+pygame.init()
+screen = pygame.display.set_mode((1024,768),DOUBLEBUF)
+pygame.display.set_caption('Pracitce')
+
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+    screen.fill((255,255,255))
+    imageFile = pygame.image.load('Image/1.png')
+    screen.blit(imageFile, (50,100))
+    pygame.display.flip()
